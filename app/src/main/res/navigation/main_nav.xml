@@ -39,9 +39,9 @@
             android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment"
             app:enterAnim="@anim/slide_in_top"
-            app:exitAnim="@anim/slide_out_bottom"
+            app:exitAnim="@anim/scale_animation"
             app:popEnterAnim="@anim/slide_in_bottom"
-            app:popExitAnim="@anim/slide_out_top"
+            app:popExitAnim="@anim/scale_animation"
             app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
