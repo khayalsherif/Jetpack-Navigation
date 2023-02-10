@@ -31,7 +31,7 @@ class SecondFragment : Fragment() {
         navController = findNavController()
         binding.textView.text = args.string
         binding.toolbar.setNavigationOnClickListener { navController.popBackStack() }
-        binding.buttonGoToThird.setOnClickListener { navController.navigate(R.id.action_secondFragment_to_thridFragment) }
+        binding.buttonGoToThird.setOnClickListener { navController.navigate(R.id.action_secondFragment_to_thirdFragment) }
 
         binding.buttonGoToGlobal.setOnClickListener {
             val bundle = bundleOf("string" to "Came from Second Fragment")

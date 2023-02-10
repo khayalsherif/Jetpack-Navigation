@@ -7,7 +7,11 @@
 
     <action
         android:id="@+id/action_to_global_fragment"
-        app:destination="@id/globalFragment" />
+        app:destination="@id/globalFragment"
+        app:enterAnim="@anim/rotate_left"
+        app:exitAnim="@anim/rotate_left"
+        app:popEnterAnim="@anim/rotate_right"
+        app:popExitAnim="@anim/rotate_right" />
 
     <fragment
         android:id="@+id/mainFragment"
@@ -16,7 +20,11 @@
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -28,8 +36,12 @@
             app:argType="string"
             app:nullable="true" />
         <action
-            android:id="@+id/action_secondFragment_to_thridFragment"
+            android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"
             app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
@@ -42,7 +54,7 @@
         android:id="@+id/globalFragment"
         android:name="az.khayalsharifli.jetpacknavigation.fragments.GlobalFragment"
         android:label="fragment_global"
-        tools:layout="@layout/fragment_global" >
+        tools:layout="@layout/fragment_global">
         <argument
             android:name="string"
             app:argType="string" />
