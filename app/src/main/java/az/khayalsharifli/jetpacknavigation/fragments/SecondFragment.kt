@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -30,7 +31,12 @@ class SecondFragment : Fragment() {
         navController = findNavController()
         binding.textView.text = args.string
         binding.toolbar.setNavigationOnClickListener { navController.popBackStack() }
-        binding.button.setOnClickListener { navController.navigate(R.id.action_secondFragment_to_thridFragment) }
+        binding.buttonGoToThird.setOnClickListener { navController.navigate(R.id.action_secondFragment_to_thridFragment) }
+
+        binding.buttonGoToGlobal.setOnClickListener {
+            val bundle = bundleOf("string" to "Came from Second Fragment")
+            navController.navigate(R.id.action_to_global_fragment, bundle)
+        }
     }
 
 }

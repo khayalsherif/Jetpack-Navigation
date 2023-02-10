@@ -5,6 +5,10 @@
     android:id="@+id/main_nav"
     app:startDestination="@id/mainFragment">
 
+    <action
+        android:id="@+id/action_to_global_fragment"
+        app:destination="@id/globalFragment" />
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="az.khayalsharifli.jetpacknavigation.fragments.MainFragment"
@@ -33,4 +37,14 @@
         android:name="az.khayalsharifli.jetpacknavigation.fragments.ThirdFragment"
         android:label="fragment_tirdd"
         tools:layout="@layout/fragment_third" />
+
+    <fragment
+        android:id="@+id/globalFragment"
+        android:name="az.khayalsharifli.jetpacknavigation.fragments.GlobalFragment"
+        android:label="fragment_global"
+        tools:layout="@layout/fragment_global" >
+        <argument
+            android:name="string"
+            app:argType="string" />
+    </fragment>
 </navigation>

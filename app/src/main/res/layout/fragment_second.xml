@@ -39,12 +39,18 @@
             tools:text="Test" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonGoToThird"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Go To Third" />
 
+        <Button
+            android:id="@+id/buttonGoToGlobal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Go To Global" />
     </LinearLayout>
 
 

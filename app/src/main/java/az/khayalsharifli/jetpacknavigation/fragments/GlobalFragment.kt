@@ -5,22 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import az.khayalsharifli.jetpacknavigation.R
-import az.khayalsharifli.jetpacknavigation.databinding.FragmentThirdBinding
+import androidx.navigation.fragment.navArgs
+import az.khayalsharifli.jetpacknavigation.databinding.FragmentGlobalBinding
 
-class ThirdFragment : Fragment() {
+class GlobalFragment : Fragment() {
 
-    private lateinit var binding: FragmentThirdBinding
+    private lateinit var binding: FragmentGlobalBinding
     private lateinit var navController: NavController
+    private val args by navArgs<GlobalFragmentArgs>()
+
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentThirdBinding.inflate(layoutInflater, container, false)
+        binding = FragmentGlobalBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -28,10 +28,6 @@ class ThirdFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
         binding.toolbar.setNavigationOnClickListener { navController.popBackStack() }
-        binding.buttonGoToGlobal.setOnClickListener {
-            val bundle = bundleOf("string" to "Came from Third Fragment")
-            navController.navigate(R.id.action_to_global_fragment, bundle)
-        }
+        binding.textView2.text = args.string
     }
-
 }
